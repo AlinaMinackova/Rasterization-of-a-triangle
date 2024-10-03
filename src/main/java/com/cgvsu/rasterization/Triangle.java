@@ -8,8 +8,8 @@ import java.util.Arrays;
 
 public class Triangle {
 
-    private int[] coorX;
-    private int[] coorY;
+    private final int[] coorX;
+    private final int[] coorY;
     private Color color0;
     private Color color1;
     private Color color2;
@@ -42,7 +42,7 @@ public class Triangle {
 
 
     public void draw(GraphicsContext graphicsContext) {
-        graphicsContext.clearRect(0, 0, 800, 600);
+        graphicsContext.clearRect(0, 0, 1500, 1000);
         final PixelWriter pixelWriter = graphicsContext.getPixelWriter();
 
         //сортируем вершины
@@ -118,6 +118,78 @@ public class Triangle {
                 }
             }
         }
+//
+//
+//
+//
+//
+//
+//
+//
+//        else if (coorY[0] == coorY[1]){
+//            for (int y = coorY[1]; y <= coorY[2]; y++) {
+//                //находим x
+//                int xl = ((coorX[1] - coorX[2]) * (y - coorY[2]) / (coorY[1] - coorY[2])) + coorX[2];
+//                int xr = ((coorX[0] - coorX[2]) * (y - coorY[2]) / (coorY[0] - coorY[2])) + coorX[2];
+//                if (xl > xr) {
+//                    int tempX = xl;
+//                    xl = xr;
+//                    xr = tempX;
+//                }
+//                for (int x = xl; x <= xr; x++) {
+//                    int[] rgb = barycentricCoordinates(x, y);
+//                    pixelWriter.setColor(x, y, Color.rgb(rgb[0], rgb[1], rgb[2]));
+//                }
+//            }
+//        }
+//
+//        else if (coorY[1] == coorY[2]){
+//            for (int y = coorY[0]; y <= coorY[1]; y++) {
+//                //находим x
+//                int xl = ((coorX[1] - coorX[0]) * (y - coorY[0]) / (coorY[1] - coorY[0])) + coorX[0];
+//                int xr = ((coorX[2] - coorX[0]) * (y - coorY[0]) / (coorY[2] - coorY[0])) + coorX[0];
+//                if (xl > xr) { // проверяем границы
+//                    int tempX = xl;
+//                    xl = xr;
+//                    xr = tempX;
+//                }
+//                for (int x = xl; x <= xr; x++) {
+//                    int[] rgb = barycentricCoordinates(x, y);
+//                    pixelWriter.setColor(x, y, Color.rgb(rgb[0], rgb[1], rgb[2]));
+//                }
+//            }
+//        }
+//        else {
+//            for (int y = coorY[0]; y < coorY[1]; y++) {
+//                //находим x
+//                int xl = ((coorX[1] - coorX[0]) * (y - coorY[0]) / (coorY[1] - coorY[0])) + coorX[0];
+//                int xr = ((coorX[2] - coorX[0]) * (y - coorY[0]) / (coorY[2] - coorY[0])) + coorX[0];
+//                if (xl > xr) { // проверяем границы
+//                    int tempX = xl;
+//                    xl = xr;
+//                    xr = tempX;
+//                }
+//                for (int x = xl; x <= xr; x++) {
+//                    int[] rgb = barycentricCoordinates(x, y);
+//                    pixelWriter.setColor(x, y, Color.rgb(rgb[0], rgb[1], rgb[2]));
+//                }
+//            }
+//
+//            for (int y = coorY[1]; y <= coorY[2]; y++) {
+//                //находим x
+//                int xl = ((coorX[1] - coorX[2]) * (y - coorY[2]) / (coorY[1] - coorY[2])) + coorX[2];
+//                int xr = ((coorX[0] - coorX[2]) * (y - coorY[2]) / (coorY[0] - coorY[2])) + coorX[2];
+//                if (xl > xr) {
+//                    int tempX = xl;
+//                    xl = xr;
+//                    xr = tempX;
+//                }
+//                for (int x = xl; x <= xr; x++) {
+//                    int[] rgb = barycentricCoordinates(x, y);
+//                    pixelWriter.setColor(x, y, Color.rgb(rgb[0], rgb[1], rgb[2]));
+//                }
+//            }
+//        }
     }
 
 }

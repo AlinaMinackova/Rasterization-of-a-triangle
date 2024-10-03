@@ -35,22 +35,27 @@ public class RasterizationController {
 //                Color.BLACK, Color.WHITE).draw(canvas.getGraphicsContext2D());
 
 
-        canvas.setOnMouseClicked(event -> {
+//        canvas.setOnMouseClicked(event -> {
+//            switch (event.getButton()) {
+//                case PRIMARY -> handlePrimaryClick(event);
+//            }
+//        });
+        canvas.setOnMouseDragged(event -> {
             switch (event.getButton()) {
-                case PRIMARY -> handlePrimaryClick(event);
+                case PRIMARY -> handlePrimaryMove(event);
             }
         });
     }
 
-//    private void handlePrimaryClick (MouseEvent event){
-//        new Triangle(new int[]{100, (int) event.getX(), 600}, new int[]{250, (int) event.getY(), 250},  Color.GREEN,
-//                Color.RED, Color.BLUE).draw(canvas.getGraphicsContext2D());
-//        }
-
-    private void handlePrimaryClick (MouseEvent event){
-        new Triangle(new int[]{400, (int) event.getX(), 400}, new int[]{100, (int) event.getY(), 400}, Color.GREEN,
+    private void handlePrimaryMove(MouseEvent event){
+        new Triangle(new int[]{400, (int) event.getX(), 900}, new int[]{400, (int) event.getY(), 400},  Color.GREEN,
                 Color.RED, Color.BLUE).draw(canvas.getGraphicsContext2D());
     }
+
+//    private void handlePrimaryMove(MouseEvent event){
+//        new Triangle(new int[]{600, (int) event.getX(), 600}, new int[]{300, (int) event.getY(), 600}, Color.GREEN,
+//                Color.RED, Color.BLUE).draw(canvas.getGraphicsContext2D());
+//    }
 
 
 

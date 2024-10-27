@@ -2,7 +2,6 @@ package com.cgvsu.rasterizationfxapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -48,8 +47,11 @@ public class RasterizationController {
     }
 
     private void handlePrimaryMove(MouseEvent event){
-        new Triangle(new int[]{400, (int) event.getX(), 900}, new int[]{400, (int) event.getY(), 400},  Color.GREEN,
-                Color.RED, Color.BLUE).draw(canvas.getGraphicsContext2D());
+        canvas.getGraphicsContext2D().clearRect(0, 0, 1500, 1000);
+        TriangleRasterization.draw(canvas.getGraphicsContext2D(),
+                new int[]{400, (int) event.getX(), 900},
+                new int[]{400, (int) event.getY(), 400},
+                new Color[]{Color.GREEN, Color.RED, Color.BLUE});
     }
 
 //    private void handlePrimaryMove(MouseEvent event){
